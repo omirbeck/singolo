@@ -17,40 +17,50 @@ a:hover {
 
 .section {
   width: 1020px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* HEADER - Logo*/
 
 header {
-  align-items: center;
+  height: 89px;
+  /* align-items: center; */
   background-color: green;
-  border-bottom: 4px solid #2C3445; 
-  box-sizing: border-box;
+  border-bottom: 6px solid #2C3445; 
   color: #ffffff;
+  box-sizing: content-box;
 }
 
 .header-block {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: flex-start */
   /* border: 2px solid green; */
-  padding: 32px 36px;
+  padding: 35px 40px;
 }
 
 .header-logo {
+  text-align: start;
+}
+
+h1 {
   font-size: 25px;
   font-weight: 700;
+  font-style: normal;
 }
 
 .header-logo span {
+  font-size: 25px;
+  font-weight: 700;
   color: #FF6C64;
 }
 
+
 .header-nav {
   display: flex;
+  text-align: center;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   width: 370px;
   font-size: 12px;
   font-weight: 700;
@@ -64,9 +74,9 @@ header {
 /* MAIN Slider block*/
 
 main {
-  height: 585px;
+  height: 594px;
   background-color: #FF6C64;
-  border-bottom: 15px solid #FF676C;
+  border-bottom: 6px solid #FF676C;
 }
 
 
@@ -75,39 +85,42 @@ main {
 
 footer {
   height: 500px;
-  padding: 68px 40px 72px 40px;
-  background-color: #ffffff;
+  padding: 59px 40px 72px 40px;
+  background-color: #F2F2F2;
   color: #737FA1;
   box-sizing: border-box;
 }
 
 .services-block {
+  height: 102px;
   
 }
 
 .services-block h1 {
   font-size: 30px;
   font-weight: 900;
+  align-items: flex-start;
 }
 
 .services-block p {
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.5;
-  margin-top: 30px;
+  line-height: 1.6;
+  margin-top: 20px;
+  text-align: justify;
 }
 
 /* Services content */
 
 .services-wrap {
   display: flex;
-  margin-top: 55px;
+  margin-top: 58px;
 }
 
 .services-wrap__block {
   display: flex;
   width: 300px;
-  height: 85px;
+  height: 95px;
 }
 
 .services-text {
@@ -126,8 +139,8 @@ footer {
 .services-wrap__content p {
   font-size: 12px;
   font-weight: 700;
-  margin-top: 20px;
-  line-height: 2;
+  margin-top: 5px;
+  line-height: 1.8;
   text-align: justify;
 }
 
