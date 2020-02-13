@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+a:hover {
+  color: #FF6C64;
+}
+
+.section {
+  width: 1020px;
+  margin: auto;
+}
+
+/* HEADER - Logo*/
+
+header {
+  align-items: center;
+  background-color: #272C38;
+  border-bottom: 4px solid #2C3445; 
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid green;
+  padding: 32px 36px;
+}
+
+.header-logo {
+  font-size: 25pt;
+  font-weight: 900;
+}
+
+.header-logo span {
+  color: #FF6C64;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 370px;
+  font-size: 12pt;
+  font-weight: 900;
+  /* border: 1px solid green; */
+}
+
+.header-nav li {
+  list-style-type: none;
+}
+
+/* MAIN Slider block*/
+
+main {
+  height: 585px;
+  background-color: #FF6C64;
+  border-bottom: 15px solid #FF676C;
+}
+
+
+
+/* Footer - Our Services*/
+
+footer {
+  height: 500px;
+  padding: 68px 40px 72px 40px;
+  background-color: #ffffff;
+  color: #737FA1;
+  box-sizing: border-box;
+}
+
+.services-block {
+  
+}
+
+.services-block h1 {
+  font-weight: 900
+}
+
+.services-block p {
+  font-size: 18pt;
+  font-weight: 300;
+}
+
+/* Services content */
+
+.services-wrap {
+  display: flex;
+}
