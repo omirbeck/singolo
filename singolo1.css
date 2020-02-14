@@ -43,7 +43,7 @@ header {
 }
 
 .header-logo {
-
+  max-width: 0;
 }
 
 h1 {
@@ -58,20 +58,25 @@ h1 {
 }
 
 
+
+
 .header-nav {
   display: flex;
-  text-align: center;
   justify-content: space-between;
-  /* align-items: center; */
   width: 370px;
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  padding-top: 8px;
   /* border: 1px solid green; */
 }
 
 .header-nav li {
   list-style-type: none;
+}
+
+.header-nav span {
+  color: #454D63;
 }
 
 
@@ -125,7 +130,6 @@ footer {
 
 .services-block {
   height: 102px;
-  
 }
 
 .services-block h1 {
