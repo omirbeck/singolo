@@ -1,3 +1,5 @@
+/* @import "./normalize.css"; */
+
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +31,7 @@ header {
   border-bottom: 6px solid #2C3445; 
   color: #ffffff;
   box-sizing: content-box;
+  line-height: 1;
 }
 
 .header-block {
@@ -40,13 +43,12 @@ header {
 }
 
 .header-logo {
-  text-align: start;
+
 }
 
 h1 {
   font-size: 25px;
   font-weight: 700;
-  font-style: normal;
 }
 
 .header-logo span {
@@ -64,6 +66,7 @@ h1 {
   width: 370px;
   font-size: 12px;
   font-weight: 700;
+  line-height: 1;
   /* border: 1px solid green; */
 }
 
@@ -71,12 +74,41 @@ h1 {
   list-style-type: none;
 }
 
+
 /* MAIN Slider block*/
 
 main {
   height: 594px;
   background-color: #FF6C64;
   border-bottom: 6px solid #FF676C;
+}
+
+.slider-block__left {
+  z-index: 1;
+  position: absolute;
+  top: 376px;
+  left: 485px;
+}
+
+.slider-block__right {
+  z-index: 1;
+  position: absolute;
+  top: 376px;
+  left: 1408px;
+}
+
+.slider-block__vertical {
+  z-index: 1;
+  position: absolute;
+  top: 148px;
+  left: 555px;
+}
+
+.slider-block__horizontal {
+  z-index: 1;
+  position: absolute;
+  top: 269px;
+  left: 868px;
 }
 
 
