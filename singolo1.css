@@ -135,14 +135,13 @@ footer {
 .services-block h1 {
   font-size: 30px;
   font-weight: 900;
-  align-items: flex-start;
 }
 
 .services-block p {
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.6;
-  margin-top: 20px;
+  line-height: 1.7;
+  margin-top: 18px;
   text-align: justify;
 }
 
@@ -150,7 +149,7 @@ footer {
 
 .services-wrap {
   display: flex;
-  margin-top: 58px;
+  margin-top: 56px;
 }
 
 .services-wrap__block {
@@ -163,19 +162,29 @@ footer {
   margin-left: 20px;
 }
 
-.services-wrap__content {
-  margin-left: 20px;
+.responsive {
+  margin-top: 28px;
 }
 
-.services-wrap__content h2 {
+.services-wrap__content {
+  margin-left: 22px;
+}
+
+.image {
+  margin-left: 2px;
+  margin-top: 3px;
+}
+
+.services-wrap__content h2 {;
   font-size: 18px;
   font-weight: 900;
 }
 
 .services-wrap__content p {
+  width: 217px;
   font-size: 12px;
   font-weight: 700;
-  margin-top: 5px;
+  margin-top: 8px;
   line-height: 1.8;
   text-align: justify;
 }
