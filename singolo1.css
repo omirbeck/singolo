@@ -147,11 +147,19 @@ main {
   left: 42px;
 }
 
+.slider-block__left:hover {
+  opacity: 0.5;
+}
+
 .slider-block__right {
   z-index: 1;
   position: absolute;
   top: 281px;
   left: 964px;
+}
+
+.slider-block__right:hover {
+  opacity: 0.5;
 }
 
 .slider-block__vertical {
