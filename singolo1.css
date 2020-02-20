@@ -244,12 +244,15 @@ footer {
 
 .services-wrap__content p {
   width: 220px;
+  height: 60px;
   font-size: 12px;
   font-weight: 700;
   margin-top: 8px;
   line-height: 1.8;
   text-align: justify;
   hyphens: manual;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .services-wrap__content .pen_content {
