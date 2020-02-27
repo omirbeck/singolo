@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="singolo1.css">
-  <title>Singolo</title>
+  <title>Singolo1</title>
 </head>
-
 <body>
-  <header class="section">
-    <div class="header-block">
-      <div class="header-logo">
+  <header class="header">
+    <div class="wrapper header-wrapper">
+      <a href="#" class="logo">
         <h1>SINGOLO<span>*</span></h1>
-      </div>
-      <nav>
-        <ul class="header-nav">
+      </a>
+      <nav class="header__navigation">
+        <ul class="navigation">
           <li><a href="#">home</a></li>
           <span>&#183;</span>
           <li><a href="#">services</a></li>
@@ -29,96 +27,86 @@
       </nav>
     </div>
   </header>
-  <main class="section">
-    <div class="slider-block">
-      <a href="#"><img src="./assets/img/left.png" alt="" class="slider-block__left"></a> 
-      <a href="#"><img src="./assets/img/right.png" alt="" class="slider-block__right"></a>
-      <img src="./assets/img/iphone_vertical_shadow.png" alt="" class="slider-block__vertical">
-      <img src="./assets/img/iphone_horizontal_shadow.png" alt="" class="slider-block__horizontal">
-    </div>
+  <main class="main">
+    <section class="slider">
+      <div class="wrapper slider-wrapper">
+        <a href="#"><img class="slider__left" src="./assets/img/left.png" alt="slider"></a>
+        <a href="#"><img class="slider__right" src="./assets/img/right.png" alt="slider"></a>
+        <img class="slider__vertical" src="./assets/img/iphone_vertical_shadow.png" alt="slider">
+        <img class="slider__horizontal" src="./assets/img/iphone_horizontal_shadow.png" alt="slider">
+      </div>
+    </section>
+    <section class="services">
+      <div class="wrapper">
+        <div class="services__title">
+          <h2>Our Services</h2>
+          <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
+            Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+          </p>
+        </div>
+        <div class="layout-3-column">
+          <div class="services__content">
+            <img class="services__img" width="59" height="59" src="./assets/img/pen.png" alt="services">
+            <div class="services__text">
+              <h3>Custom Design</h3>
+              <p>Curabitur vestibulum eget mauris quis laoreet.
+                Phasellus in quam laoreet, viverra lacus ut, ultrices velit.
+              </p>
+            </div>
+          </div>
+          <div class="services__content">
+            <img class="services__img" width="59" height="59" src="./assets/img/builb.png" alt="services">
+            <div class="services__text">
+              <h3>Inovative Ideas</h3>
+              <p>Quisque luctus, quam eget molestie com&shy;modo,
+                lacus purus cursus purus, nec rutrum tellus dolor id lorem.
+              </p>
+            </div>
+          </div>
+          <div class="services__content">
+            <img class="services__img" width="59" height="59" src="./assets/img/heart.png" alt="services">
+            <div class="services__text">
+              <h3>Love Is The Answer</h3>
+              <p>Nulla sed nunc et tortor luctus faucibus.
+                Morbi at aliquet turpis, et consequat felis. Quisque condimentum.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="layout-3-column">
+          <div class="services__content ">
+            <img class="services__img" width="59" height="59" src="./assets/img/phone.png" alt="services">
+            <div class="services__text">
+              <h3>Responsive Layout</h3>
+              <p>Sed porttitor placerat rhoncus.
+                In at nunc tellus. Maecenas blandit nunc ligula.
+                Prae&shy;sent elit leo.
+              </p>
+            </div>
+          </div>
+          <div class="services__content services-tex">
+            <img class="services__img" width="59" height="59" src="./assets/img/bubble.png" alt="services">
+            <div class="services__text">
+              <h3>24 / 7 Support</h3>
+              <p>Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi.
+                Nulla a sem erat. Pellen&shy;tesque egestas venenatis lorem .
+              </p>
+            </div>
+          </div>
+          <div class="services__content services-tex">
+            <img class="services__img" width="59" height="59" src="./assets/img/star.png" alt="services">
+            <div class="services__text">
+              <h3>Feel Like A Star</h3>
+              <p>Quisque hendrerit purus dapibus, ornare nibh vitae,
+                viverra nibh. Fusce vitae aliquam tellus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
   </main>
-  <footer class="section">
-    <div class="services-block">
-      <h2>Our Services</h2>
-      <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
-        Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-      </p>
-    </div>
-    <div class="services-wrap">
-      <div class="services-wrap__block">
-        <div class="services-wrap__img">
-          <img src="./assets/img/pen.png" alt="">
-        </div>
-        <div class="services-wrap__content">
-          <h3>Custom Design</h3>
-          <p class='pen_content'>Curabitur vestibulum eget mauris quis laoreet. 
-            Phasellus in quam laoreet, viverra lacus ut, ultrices velit.
-          </p>
-        </div>
-      </div>
-      <div class="services-wrap__block services-text">
-        <div class="services-wrap__img">
-          <img src="./assets/img/builb.png" alt="">
-        </div>
-        <div class="services-wrap__content">
-          <h3>Inovative Ideas</h3>
-          <p class='builb_content'>Quisque luctus, quam eget molestie com&shy;modo,
-            lacus purus cursus purus, nec rutrum tellus dolor id lorem.
-          </p>
-        </div>
-      </div>
-      <div class="services-wrap__block services-text">
-        <div class="services-wrap__img">
-          <img src="./assets/img/heart.png" alt="">
-        </div>
-        <div class="services-wrap__content">
-          <h3>Love Is The Answer</h3>
-          <p class='heart_content'>Nulla sed nunc et tortor luctus faucibus.
-            Morbi at aliquet turpis, et consequat felis. Quisque condimentum.
-          </p>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="services-wrap responsive">
-      <div class="services-wrap__block ">
-        <div class="services-wrap__img">
-          <img src="./assets/img/phone.png" alt="">
-        </div>
-        <div class="services-wrap__content ">
-          <h3>Responsive Layout</h3>
-          <p class="phone_content">Sed porttitor placerat rhoncus.
-            In at nunc tellus. Maecenas blandit nunc ligula.
-            Prae&shy;sent elit leo.
-          </p>
-        </div>
-      </div>
-      <div class="services-wrap__block services-text">
-        <div class="services-wrap__img">
-          <img src="./assets/img/bubble.png" alt="">
-        </div>
-        <div class="services-wrap__content">
-          <h3>24 / 7 Support</h3>
-          <p class='bubble_content'>Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi.
-            Nulla a sem erat. Pellen&shy;tesque egestas venenatis lorem .
-          </p>
-        </div>
-      </div>
-      <div class="services-wrap__block services-text">
-        <div class="services-wrap__img">
-          <img src="./assets/img/star.png" alt="">
-        </div>
-        <div class="services-wrap__content">
-          <h3>Feel Like A Star</h3>
-          <p>Quisque hendrerit purus dapibus, ornare nibh vitae,
-            viverra nibh. Fusce vitae aliquam tellus.
-          </p>
-        </div>
-      </div>
-    </div>
-    </div>
-  </footer>
 </body>
-
 </html>
