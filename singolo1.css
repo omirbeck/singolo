@@ -51,12 +51,14 @@
   margin: 0px;
   padding: 0px;
   font-family: 'Lato', sans-serif;
+  color: #737FA1;
 }
 
 h1 {
   font-size: 25px;
   font-weight: 700;
   line-height: 1;
+  color: #ffffff;
 }
 
 h2 {
@@ -67,13 +69,12 @@ h2 {
 h3 {
   font-size: 18px;
   font-weight: 900;
+  
 }
 
 a {
   text-decoration: none;
   cursor: pointer;
-  text-transform: uppercase;
-  color: #ffffff;
 }
 
 
@@ -119,7 +120,12 @@ a {
   padding-top: 10px;
 }
 
-li a:hover {
+.navigation a {
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.navigation a:hover {
   color: #FF6C64;
 }
 
