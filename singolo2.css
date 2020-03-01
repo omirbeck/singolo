@@ -1,16 +1,99 @@
-@import "./singolo1.css";
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Black.eot');
+  src: url('./assets/fonts/Lato-Black.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/Lato-Black.woff2') format('woff2'),
+      url('./assets/fonts/Lato-Black.woff') format('woff'),
+      url('./assets/fonts/Lato-Black.ttf') format('truetype'),
+      url('./assets/fonts/Lato-Black.svg#Lato-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Light.eot');
+  src: url('./assets/fonts/Lato-Light.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/Lato-Light.woff2') format('woff2'),
+      url('./assets/fonts/Lato-Light.woff') format('woff'),
+      url('./assets/fonts/Lato-Light.ttf') format('truetype'),
+      url('./assets/fonts/Lato-Light.svg#Lato-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Bold.eot');
+  src: url('./assets/fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/Lato-Bold.woff2') format('woff2'),
+      url('./assets/fonts/Lato-Bold.woff') format('woff'),
+      url('./assets/fonts/Lato-Bold.ttf') format('truetype'),
+      url('./assets/fonts/Lato-Bold.svg#Lato-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Regular.eot');
+  src: url('./assets/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/Lato-Regular.woff2') format('woff2'),
+      url('./assets/fonts/Lato-Regular.woff') format('woff'),
+      url('./assets/fonts/Lato-Regular.ttf') format('truetype'),
+      url('./assets/fonts/Lato-Regular.svg#Lato-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato', sans-serif;
+  color: #737FA1;
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 900;
+  
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+
+/******* Portfolio ********/
 
 .portfolio {
   height: 870px;
   padding-top: 60px;
-  background-color: #272C38;
-  color: #626C8A;
-  border-bottom: 5px solid #2C3445;
+  background-color: #272c38;
+  color: #626c8a;
+  border-bottom: 5px solid #2c3445;
   box-sizing: border-box;
-}
-
-.portfolio__wrapper {
-
 }
 
 .portfolio__wrapper p {
@@ -31,17 +114,21 @@
   font-size: 12px;
   font-weight: 400;
   padding: 2.5px 6.2px;
-  border: 1px solid #626C8A;
-  background-color: #272C38;
-  color: #626C8A;
+  border: 1px solid #626c8a;
+  background-color: #272c38;
+  color: #626c8a;
   border-radius: 5px;
   box-sizing: border-box;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .portfolio__button:hover {
-  color: #A1A3A6;
-  border-color: #A1A3A6;
+  color: #a1a3a6;
+  border-color: #a1a3a6;
+}
+
+.gallery__img:nth-child(n + 5) {
+  display: none;
 }
 
 .portfolio__gallery {
@@ -68,9 +155,9 @@
 /******* About Us *******/
 
 .about-us {
-  height: 732px;;
+  height: 732px;
   padding-top: 59px;
-  background: #F2F2F2;
+  background: #f2f2f2;
   border-bottom: 3px solid #ffffff;
   box-sizing: border-box;
 }
@@ -83,47 +170,71 @@
   text-align: justify;
 }
 
+.layout-3-column {
+  display: flex;
+  margin-top: 55px;
+}
+
+.layout-3-column:last-child {
+  margin-top: 28px;
+}
+
 .about-us__content {
   width: 940px;
   margin-top: 17px;
-  padding-left: 20px;
+  margin-right: 19px;
 }
 
-.about-us__content:first-child {
-  padding: 0;
+.about-us__content:nth-child(2) {
+  margin-right: 21px;
 }
 
 .about-us__content h3 {
   margin-top: 12px;
+  white-space: nowrap;
+  letter-spacing: -0.005em;
 }
 
 .about-us__content p {
-  width: 300px;
-  height: 42px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: normal;
   margin-top: 8px;
   line-height: 1.8;
   text-align: justify;
   hyphens: manual;
   overflow: hidden;
-  letter-spacing: -0.005em
+  letter-spacing: -0.001rem;
 }
 
+.about-us__content .adam {
+  letter-spacing: -0.004rem !important;
+}
 .social-media {
-  margin-top: 24px;
+  display: flex;
+  margin-top: 23px;
 }
 
-.media__img {
-  padding-left: 5px;
+.social-media__link {
+  display: flex;
+  width: 33px;
+  height: 33px;
+  margin-right: 7px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 1px;
+  border: 1px solid #737fa1;
+  border-radius: 50%;
 }
 
-.media__img:hover {
-  opacity: 0.5;
+.social-media__link:hover svg {
+  fill: #ffffff;
 }
 
-.media_first {
-  padding-left: 0;
+.social-media__link:hover {
+  background: #737fa1;
 }
 
-
+svg {
+  fill: #737fa1;
+}
