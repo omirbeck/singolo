@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('./assets/fonts/Lato-Black.eot');
+    src: url('./assets/fonts/Lato-Black.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Lato-Black.woff2') format('woff2'),
+        url('./assets/fonts/Lato-Black.woff') format('woff'),
+        url('./assets/fonts/Lato-Black.ttf') format('truetype'),
+        url('./assets/fonts/Lato-Black.svg#Lato-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Lato';
+    src: url('./assets/fonts/Lato-Light.eot');
+    src: url('./assets/fonts/Lato-Light.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Lato-Light.woff2') format('woff2'),
+        url('./assets/fonts/Lato-Light.woff') format('woff'),
+        url('./assets/fonts/Lato-Light.ttf') format('truetype'),
+        url('./assets/fonts/Lato-Light.svg#Lato-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Lato';
+    src: url('./assets/fonts/Lato-Bold.eot');
+    src: url('./assets/fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Lato-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Lato-Bold.woff') format('woff'),
+        url('./assets/fonts/Lato-Bold.ttf') format('truetype'),
+        url('./assets/fonts/Lato-Bold.svg#Lato-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Lato';
+    src: url('./assets/fonts/Lato-Regular.eot');
+    src: url('./assets/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Lato-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Lato-Regular.woff') format('woff'),
+        url('./assets/fonts/Lato-Regular.ttf') format('truetype'),
+        url('./assets/fonts/Lato-Regular.svg#Lato-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  * {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+    color: #737FA1;
+  }
+  
+  h1 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+  }
+  
+  h2 {
+    font-size: 30px;
+    font-weight: 900;
+  }
+  
+  h3 {
+    font-size: 18px;
+    font-weight: 900;
+    
+  }
+  
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .wrapper {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+
+  /******* Get a Quote *******/
+  .get-quote {
+
+  }
+  
+  .layout-2-column {
+      display: flex;
+  }
+
+  /******** Footer *******/
+
+  .footer {
+      display: flex;
+  }
+  .social-media {
+    display: flex;
+    margin-top: 23px;
+  }
+  
+  .social-media__link {
+    display: flex;
+    width: 33px;
+    height: 33px;
+    margin-right: 7px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 1px;
+    border: 1px solid #737fa1;
+    border-radius: 50%;
+  }
+  
+  .social-media__link:hover svg {
+    fill: #ffffff;
+  }
+  
+  .social-media__link:hover {
+    background: #737fa1;
+  }
+  
+  svg {
+    fill: #737fa1;
+  }
