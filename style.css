@@ -308,7 +308,6 @@
     border-color: #a1a3a6;
   }
 
-
   /****** Gallery ******/
   
   .gallery__img:nth-child(n + 5) {
@@ -329,11 +328,21 @@
   }
   
   .gallery__img {
-    padding-left: 20px;
+    margin-left: 20px;
+    cursor: default;
+    box-sizing: border-box;
+  }
+
+  .gallery__img:not(.active_border):hover {
+    cursor: pointer;
   }
   
   .gallery__img:first-child {
     padding: 0;
+  }
+
+  .active_border {
+    outline: 5px solid #F06C64;
   }
   
   /******* About Us *******/

@@ -1,5 +1,6 @@
 const MENU = document.getElementById('menu');
 const PORTFOLIO_MENU = document.getElementById('portfolio-menu');
+const PORTFOLIO_GAL = document.querySelector('.portfolio__gallery');
 const GALLERY = document.querySelectorAll('#gallery');
 const SUBMIT = document.getElementById('form__submit');
 const MESSAGE = document.getElementById('popup');
@@ -19,7 +20,9 @@ MENU.addEventListener('click', event => {
 
 /*** Рандомно меняет изображения  ***/
 PORTFOLIO_MENU.addEventListener('click', event => {
-  if (event.target.classList[0] == 'portfolio__button') {
+  console.log(event.target.classList)
+  if (event.target.classList[0] == 'portfolio__button' & event.target.classList[1] !== 'active') {
+    PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
     PORTFOLIO_MENU.querySelectorAll('button').forEach(el => el.classList.remove('active'));
     event.target.classList.add('active');
     for (let i = 0; i < GALLERY.length; i++) {
@@ -32,6 +35,14 @@ PORTFOLIO_MENU.addEventListener('click', event => {
   }
 })
 
+
+PORTFOLIO_GAL.addEventListener('click', event => {
+  console.log(event.target.classList)
+  if (event.target.classList[0] == 'gallery__img') {
+    PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
+    event.target.classList.add('active_border');
+  }
+})
 
 /*** POP UP***/
 SUBMIT.addEventListener('click', event => {
