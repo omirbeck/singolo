@@ -74,7 +74,7 @@
   
   a {
     text-decoration: none;
-    cursor: pointer;
+    /*cursor: pointer;*/
   }
   
   
@@ -120,19 +120,25 @@
     padding-top: 10px;
   }
   
-  .navigation a {
+  .navigation li a {
     text-transform: uppercase;
     color: #ffffff;
+    cursor: default;
   }
   
-  .navigation a:hover {
+  .navigation li a.active {
     color: #FF6C64;
+  }
+
+  .navigation li a:not(.active):hover {
+    color: #FF6C64;
+    cursor: pointer;
   }
   
   .navigation li {
     list-style-type: none;
   }
-  
+
   .navigation span {
     color: #454D63;
   }
@@ -288,13 +294,22 @@
     color: #626c8a;
     border-radius: 5px;
     box-sizing: border-box;
-    cursor: pointer;
+    cursor: default;
   }
   
-  .portfolio__button:hover {
+  .portfolio-menu .active {
     color: #a1a3a6;
     border-color: #a1a3a6;
   }
+
+  .portfolio-menu button:not(.active):hover {
+    cursor: pointer;
+    color: #a1a3a6;
+    border-color: #a1a3a6;
+  }
+
+
+  /****** Gallery ******/
   
   .gallery__img:nth-child(n + 5) {
     display: none;
@@ -481,7 +496,35 @@
     background-color: #c34f49;;
     box-shadow: 0px 0px 5px 1px rgba(78, 78, 78, 0.5);
   }
-  
+
+
+  /**** pop-up ****/
+  #message-block {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #0008;
+    background-size: 100%;
+    z-index: 1;
+  }
+
+  #message-block.hidden {
+    display: none;
+  }
+
+  #message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid black;
+    text-align: center;
+    z-index: 1;
+  }
+
+  /*** Contact Information ***/
+
   .contact-information {
     width: 300px;
     color: #f0d8d9;
