@@ -2,9 +2,13 @@ const MENU = document.getElementById('menu');
 const PORTFOLIO_MENU = document.getElementById('portfolio-menu');
 const GALLERY = document.querySelectorAll('#gallery');
 const SUBMIT = document.getElementById('form__submit');
-const MESSAGE = document.getElementById('message-block');
+const MESSAGE = document.getElementById('popup');
 const CLOSE_BTN = document.getElementById('close-btn');
 const RESULT = document.getElementById('result');
+const TEMA = document.getElementById('popup-tema');
+const DESCRIPTION = document.getElementById('popup-description'),
+      FORM_SUBJECT = document.getElementById('form-subject'),
+      FORM_DESC = document.getElementById('form-description');
 let arr = [];
 
 /*** Меню HEADER***/
@@ -28,12 +32,25 @@ PORTFOLIO_MENU.addEventListener('click', event => {
   }
 })
 
+
+/*** POP UP***/
 SUBMIT.addEventListener('click', event => {
-  RESULT.textContent = 'HELLO'
+  //console.log(FORM_SUBJECT.value);
+  if (FORM_SUBJECT.value !== '' ) {
+    TEMA.textContent = `Тема: ${FORM_SUBJECT.value}`; 
+  }
+  if (FORM_DESC.value !== '' ) {
+    DESCRIPTION.textContent =  `Описание: ${FORM_DESC.value}`;
+  }
+
   MESSAGE.classList.remove('hidden');
+  FORM_SUBJECT.value = '';
+  FORM_DESC.value = '';
 })
 
 CLOSE_BTN.addEventListener('click', event => {
+  TEMA.textContent = 'Без темы';
+  DESCRIPTION.textContent = 'Без описания';
   MESSAGE.classList.add('hidden');
 })
 
