@@ -184,6 +184,7 @@
     position: absolute;
     top: 53px;
     left: 112px;
+    cursor: pointer;
   }
   
   .slider__horizontal {
@@ -191,6 +192,24 @@
     position: absolute;
     top: 174px;
     left: 425px;
+    cursor: pointer;
+  }
+
+  .slider__screen_black {
+    visibility: hidden;
+    z-index: 1;
+    position: absolute;
+    top: 115px;
+    left: 122px;
+  }
+
+  .slider__screen_rotate {
+    visibility: hidden;
+    z-index: 1;
+    position: absolute;
+    top: 110px;
+    left: 555px;
+    transform: rotate(90deg);
   }
   
   

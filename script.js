@@ -10,6 +10,8 @@ const TEMA = document.getElementById('popup-tema');
 const DESCRIPTION = document.getElementById('popup-description'),
       FORM_SUBJECT = document.getElementById('form-subject'),
       FORM_DESC = document.getElementById('form-description');
+const PHONE_VERTICAL = document.querySelector('.slider__vertical'),
+      PHONE_HORIZONTAL = document.querySelector('.slider__horizontal'),
 let arr = [];
 
 /*** Меню HEADER***/
@@ -17,6 +19,13 @@ MENU.addEventListener('click', event => {
   MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
   event.target.classList.add('active');
 })
+
+/*** SLIDER ***/
+PHONE_VERTICAL.addEventListener('click', event => {
+  document.querySelector('.slider__screen_rotate').style.visibility = 'visible';
+})
+
+
 
 /*** Рандомно меняет изображения  ***/
 PORTFOLIO_MENU.addEventListener('click', event => {
