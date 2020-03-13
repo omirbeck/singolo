@@ -154,7 +154,25 @@
   }
   
   .slider-wrapper {
+    border: 2px solid black;
+    width: 1200px;
+    height: 594px;
     position: relative;
+    /*overflow: hidden;*/
+  }
+
+  .slider-scroll {
+    width: 1200px;
+    background: pink;
+    position: absolute;
+    left: 0;
+    transition: all ease 1s;
+  }
+
+  .slider-scroll::after {
+    content: "";
+    display: block;
+    clear: both;
   }
   
   .slider__left {
@@ -195,6 +213,13 @@
     cursor: pointer;
   }
 
+  .slider__screen_phone {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 1200px;
+  }
+
   .slider__screen_black {
     visibility: hidden;
     z-index: 1;
@@ -207,7 +232,7 @@
     visibility: hidden;
     z-index: 1;
     position: absolute;
-    top: 110px;
+    top: 112px;
     left: 555px;
     transform: rotate(90deg);
   }

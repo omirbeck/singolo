@@ -11,8 +11,14 @@ const DESCRIPTION = document.getElementById('popup-description'),
       FORM_SUBJECT = document.getElementById('form-subject'),
       FORM_DESC = document.getElementById('form-description');
 const PHONE_VERTICAL = document.querySelector('.slider__vertical'),
-      PHONE_HORIZONTAL = document.querySelector('.slider__horizontal'),
+      PHONE_HORIZONTAL = document.querySelector('.slider__horizontal');
+const BTN_LEFT = document.querySelector('.btn_left'),
+      BTN_RIGHT = document.querySelector('.btn_right');
+const slider_phone = document.querySelector('.slider__screen_phone');
 let arr = [];
+let onv = 0,
+    onh = 0,
+    left = 0;
 
 /*** Меню HEADER***/
 MENU.addEventListener('click', event => {
@@ -21,9 +27,61 @@ MENU.addEventListener('click', event => {
 })
 
 /*** SLIDER ***/
-PHONE_VERTICAL.addEventListener('click', event => {
-  document.querySelector('.slider__screen_rotate').style.visibility = 'visible';
+
+BTN_LEFT.addEventListener('click', event => {
+  let slider_scroll = document.querySelector('.slider-scroll');
+  slider_phone.style.left = 1200+'px';
+
+  left = left - 1200;
+  if (left < -1200){
+    left = 0;
+  }
+  slider_scroll.style.left = left+'px'; 
 })
+
+BTN_RIGHT.addEventListener('click', event => {
+  let slider_scroll = document.querySelector('.slider-scroll');
+  slider_phone.style.left = -1200+'px';
+  slider_phone.style.transition = 0.5+'s';
+
+  left = left + 1200;
+   
+  if (left > 1200){
+    left = 0;
+  }
+  
+  slider_scroll.style.left = left+'px';
+})
+
+
+
+
+/*** PHONE SCREEN BLACK***/
+PHONE_VERTICAL.addEventListener('click', event => {
+  if (onv == 0) {
+    document.querySelector('.slider__screen_black').style.visibility = 'visible';
+    onv = 1;
+  } else if (onv = 1) {
+    document.querySelector('.slider__screen_black').style.visibility = 'hidden';
+    onv = 0;
+  }
+  
+})
+
+PHONE_HORIZONTAL.addEventListener('click', event => {
+  if (onh == 0) {
+    document.querySelector('.slider__screen_rotate').style.visibility = 'visible';
+    onh = 1;
+  } else if (onh = 1) {
+    document.querySelector('.slider__screen_rotate').style.visibility = 'hidden';
+    onh = 0;
+  }
+  
+})
+
+
+
+
 
 
 
