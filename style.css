@@ -154,11 +154,10 @@
   }
   
   .slider-wrapper {
-    border: 2px solid black;
     width: 1200px;
     height: 594px;
     position: relative;
-    /*overflow: hidden;*/
+    overflow: hidden;
   }
 
   .slider-scroll {
@@ -174,6 +173,7 @@
     display: block;
     clear: both;
   }
+
   
   .slider__left {
     z-index: 1;
@@ -218,6 +218,13 @@
     position: absolute;
     top: 0px;
     left: 1200px;
+  }
+
+  .slider__screen_phone2 {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: -1200px;
   }
 
   .slider__screen_black {

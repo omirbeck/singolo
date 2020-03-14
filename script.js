@@ -22,35 +22,35 @@ let onv = 0,
 
 /*** Меню HEADER***/
 MENU.addEventListener('click', event => {
+  if (event.target.classList.contains('navigation_btn')) {
   MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
   event.target.classList.add('active');
+  }
 })
 
 /*** SLIDER ***/
 
 BTN_LEFT.addEventListener('click', event => {
   let slider_scroll = document.querySelector('.slider-scroll');
-  slider_phone.style.left = 1200+'px';
 
   left = left - 1200;
   if (left < -1200){
     left = 0;
   }
-  slider_scroll.style.left = left+'px'; 
+  
+  slider_scroll.style.left = left+'px';
 })
 
 BTN_RIGHT.addEventListener('click', event => {
   let slider_scroll = document.querySelector('.slider-scroll');
-  slider_phone.style.left = -1200+'px';
-  slider_phone.style.transition = 0.5+'s';
 
   left = left + 1200;
-   
   if (left > 1200){
     left = 0;
   }
   
   slider_scroll.style.left = left+'px';
+
 })
 
 
@@ -80,15 +80,10 @@ PHONE_HORIZONTAL.addEventListener('click', event => {
 })
 
 
-
-
-
-
-
 /*** Рандомно меняет изображения  ***/
 PORTFOLIO_MENU.addEventListener('click', event => {
   console.log(event.target.classList)
-  if (event.target.classList[0] == 'portfolio__button' & event.target.classList[1] !== 'active') {
+  if (event.target.classList.contains('portfolio__button') & !event.target.classList.contains('active')) {
     PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
     PORTFOLIO_MENU.querySelectorAll('button').forEach(el => el.classList.remove('active'));
     event.target.classList.add('active');
