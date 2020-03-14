@@ -74,7 +74,7 @@
   
   a {
     text-decoration: none;
-    cursor: pointer;
+    /*cursor: pointer;*/
   }
   
   
@@ -120,19 +120,25 @@
     padding-top: 10px;
   }
   
-  .navigation a {
+  .navigation li a {
     text-transform: uppercase;
     color: #ffffff;
+    cursor: default;
   }
   
-  .navigation a:hover {
+  .navigation li a.active {
     color: #FF6C64;
+  }
+
+  .navigation li a:not(.active):hover {
+    color: #FF6C64;
+    cursor: pointer;
   }
   
   .navigation li {
     list-style-type: none;
   }
-  
+
   .navigation span {
     color: #454D63;
   }
@@ -148,8 +154,26 @@
   }
   
   .slider-wrapper {
+    width: 1200px;
+    height: 594px;
     position: relative;
+    overflow: hidden;
   }
+
+  .slider-scroll {
+    width: 1200px;
+    background: pink;
+    position: absolute;
+    left: 0;
+    transition: all ease 1s;
+  }
+
+  .slider-scroll::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
   
   .slider__left {
     z-index: 1;
@@ -178,6 +202,7 @@
     position: absolute;
     top: 53px;
     left: 112px;
+    cursor: pointer;
   }
   
   .slider__horizontal {
@@ -185,6 +210,38 @@
     position: absolute;
     top: 174px;
     left: 425px;
+    cursor: pointer;
+  }
+
+  .slider__screen_phone {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 1200px;
+  }
+
+  .slider__screen_phone2 {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: -1200px;
+  }
+
+  .slider__screen_black {
+    visibility: hidden;
+    z-index: 1;
+    position: absolute;
+    top: 115px;
+    left: 122px;
+  }
+
+  .slider__screen_rotate {
+    visibility: hidden;
+    z-index: 1;
+    position: absolute;
+    top: 112px;
+    left: 555px;
+    transform: rotate(90deg);
   }
   
   
@@ -288,13 +345,21 @@
     color: #626c8a;
     border-radius: 5px;
     box-sizing: border-box;
-    cursor: pointer;
+    cursor: default;
   }
   
-  .portfolio__button:hover {
+  .portfolio-menu .active {
     color: #a1a3a6;
     border-color: #a1a3a6;
   }
+
+  .portfolio-menu button:not(.active):hover {
+    cursor: pointer;
+    color: #a1a3a6;
+    border-color: #a1a3a6;
+  }
+
+  /****** Gallery ******/
   
   .gallery__img:nth-child(n + 5) {
     display: none;
@@ -314,11 +379,21 @@
   }
   
   .gallery__img {
-    padding-left: 20px;
+    margin-left: 20px;
+    cursor: default;
+    box-sizing: border-box;
+  }
+
+  .gallery__img:not(.active_border):hover {
+    cursor: pointer;
   }
   
   .gallery__img:first-child {
     padding: 0;
+  }
+
+  .active_border {
+    outline: 5px solid #F06C64;
   }
   
   /******* About Us *******/
@@ -464,7 +539,7 @@
     color:#ee8182;
   }
   
-  .form__submit {
+  .btn {
     height: 38px;
     width: 100px;
     background-color: #d6564f;
@@ -481,7 +556,39 @@
     background-color: #c34f49;;
     box-shadow: 0px 0px 5px 1px rgba(78, 78, 78, 0.5);
   }
-  
+
+
+  /**** pop-up ****/
+  #popup {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #0008;
+    z-index: 1;
+    overflow: auto;
+  }
+
+  #popup.hidden {
+    display: none;
+  }
+
+  #popup-content {
+    position: relative;
+    top: 20%;
+    width: 400px;
+    height: 200px;
+    border: 2px solid #a1a3a6;
+    text-align: center;
+    z-index: 1;
+    margin: auto;
+    padding: 5px 20px;
+    background: #FF6C64;
+  }
+
+  /*** Contact Information ***/
+
   .contact-information {
     width: 300px;
     color: #f0d8d9;
