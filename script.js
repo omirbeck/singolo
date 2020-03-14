@@ -65,7 +65,6 @@ PHONE_VERTICAL.addEventListener('click', event => {
     document.querySelector('.slider__screen_black').style.visibility = 'hidden';
     onv = 0;
   }
-  
 })
 
 PHONE_HORIZONTAL.addEventListener('click', event => {
@@ -76,13 +75,21 @@ PHONE_HORIZONTAL.addEventListener('click', event => {
     document.querySelector('.slider__screen_rotate').style.visibility = 'hidden';
     onh = 0;
   }
-  
+})
+
+document.querySelector('.slider__screen_black').addEventListener('click', event => {
+  document.querySelector('.slider__screen_black').style.visibility = 'hidden';
+  onv = 0;
+})
+
+document.querySelector('.slider__screen_rotate').addEventListener('click', event => {
+  document.querySelector('.slider__screen_rotate').style.visibility = 'hidden';
+  onh = 0;
 })
 
 
 /*** Рандомно меняет изображения  ***/
 PORTFOLIO_MENU.addEventListener('click', event => {
-  console.log(event.target.classList)
   if (event.target.classList.contains('portfolio__button') & !event.target.classList.contains('active')) {
     PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
     PORTFOLIO_MENU.querySelectorAll('button').forEach(el => el.classList.remove('active'));
