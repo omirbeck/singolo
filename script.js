@@ -6,12 +6,12 @@ const SUBMIT = document.getElementById('form__submit');
 const MESSAGE = document.getElementById('popup');
 const CLOSE_BTN = document.getElementById('close-btn');
 const RESULT = document.getElementById('result');
-const TEMA = document.getElementById('popup-tema');
+const TEMA = document.getElementById('popup-subject');
 const DESCRIPTION = document.getElementById('popup-description'),
       FORM_SUBJECT = document.getElementById('form-subject'),
       FORM_DESC = document.getElementById('form-description');
-const PHONE_VERTICAL = document.querySelector('.slider__vertical'),
-      PHONE_HORIZONTAL = document.querySelector('.slider__horizontal');
+const PHONE_VERTICAL = document.querySelector('.home__btn_vertical'),
+      PHONE_HORIZONTAL = document.querySelector('.home__btn_horizontal');
 const BTN_LEFT = document.querySelector('.btn_left'),
       BTN_RIGHT = document.querySelector('.btn_right');
 const slider_phone = document.querySelector('.slider__screen_phone');
@@ -54,8 +54,6 @@ BTN_RIGHT.addEventListener('click', event => {
 })
 
 
-
-
 /*** PHONE SCREEN BLACK***/
 PHONE_VERTICAL.addEventListener('click', event => {
   if (onv == 0) {
@@ -77,19 +75,10 @@ PHONE_HORIZONTAL.addEventListener('click', event => {
   }
 })
 
-document.querySelector('.slider__screen_black').addEventListener('click', event => {
-  document.querySelector('.slider__screen_black').style.visibility = 'hidden';
-  onv = 0;
-})
-
-document.querySelector('.slider__screen_rotate').addEventListener('click', event => {
-  document.querySelector('.slider__screen_rotate').style.visibility = 'hidden';
-  onh = 0;
-})
-
 
 /*** Рандомно меняет изображения  ***/
 PORTFOLIO_MENU.addEventListener('click', event => {
+  let arr = [];
   if (event.target.classList.contains('portfolio__button') & !event.target.classList.contains('active')) {
     PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
     PORTFOLIO_MENU.querySelectorAll('button').forEach(el => el.classList.remove('active'));
@@ -99,6 +88,8 @@ PORTFOLIO_MENU.addEventListener('click', event => {
       for (let j = 0; j < IMG.length; j++) {
         let n = Math.floor(Math.random() * 12) + 1;
         IMG[j].setAttribute('src', `./assets/img/portfolio${n}.png`);
+        arr.push(n);
+        console.log(arr)
       }
     }
   }
@@ -114,18 +105,25 @@ PORTFOLIO_GAL.addEventListener('click', event => {
 })
 
 /*** POP UP***/
-SUBMIT.addEventListener('click', event => {
-  //console.log(FORM_SUBJECT.value);
-  if (FORM_SUBJECT.value !== '' ) {
-    TEMA.textContent = `Тема: ${FORM_SUBJECT.value}`; 
-  }
-  if (FORM_DESC.value !== '' ) {
-    DESCRIPTION.textContent =  `Описание: ${FORM_DESC.value}`;
-  }
+FORM_NAME = document.getElementById('form-name');
+FORM_EMAIL = document.getElementById('form-email');
+FORM = document.querySelector('.form');
 
-  MESSAGE.classList.remove('hidden');
-  FORM_SUBJECT.value = '';
-  FORM_DESC.value = '';
+FORM.addEventListener("submit", event => {
+  event.preventDefault();
+  if (FORM_NAME.checkValidity() && FORM_EMAIL.checkValidity()) {
+    if (FORM_SUBJECT.value !== '' ) {
+      TEMA.textContent = `Тема: ${FORM_SUBJECT.value}`; 
+    }
+    if (FORM_DESC.value !== '' ) {
+      DESCRIPTION.textContent =  `Описание: ${FORM_DESC.value}`;
+    }
+    MESSAGE.classList.remove('hidden');
+    FORM_SUBJECT.value = '';
+    FORM_DESC.value = '';
+    
+  }
+  
 })
 
 CLOSE_BTN.addEventListener('click', event => {

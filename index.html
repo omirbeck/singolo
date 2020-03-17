@@ -35,6 +35,8 @@
         <div class="slider-scroll">
             <img class="slider__vertical" src="./assets/img/iphone_vertical_shadow.png" alt="slider">
             <img class="slider__horizontal" src="./assets/img/iphone_horizontal_shadow.png" alt="slider">
+            <img class="home__btn_vertical" src="./assets/img/home_btn.png" alt="slider">
+            <img class="home__btn_horizontal" src="./assets/img/home_btn.png" alt="slider">
             <img class="slider__screen_black" src="./assets/img/black_screen.png" alt="slider">
             <img class="slider__screen_rotate" src="./assets/img/black_screen.png" alt="slider">
             <img class="slider__screen_phone" src="./assets/img/slider_3phone.png" alt="slider">
@@ -313,9 +315,9 @@
           tortor mauris condimentum nibh.
         </p>
         <div class="layout-2-column">
-          <form class="form" onsubmit="return false">
-            <input class="form-input" id="form-text" type="text" name="name" placeholder="Name (Required)" required />
-            <input class="form-input" type="email" name="email" placeholder="Email (Required)" required />
+          <form class="form">
+            <input class="form-input" id="form-name" type="text" name="name" placeholder="Name (Required)" required />
+            <input class="form-input" id="form-email" type="email" name="email" placeholder="Email (Required)" required />
             <input class="form-input" id="form-subject" type="text" name="subject" placeholder="Subject" />
             <textarea class="form-input form__textarea" id="form-description" name="describe" id="form__textarea"
               cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
@@ -323,9 +325,13 @@
           </form>
           <div id="popup" class="hidden">
             <div id="popup-content">
-              <p>Письмо отправлено</p>
-              <p id="popup-tema">Без темы</p>
-              <p id="popup-description">Без описания</p>
+              <p id="popup-message">Письмо отправлено</p>
+              <div class="popup-block">
+                <p id="popup-subject">Без темы</p>
+              </div>
+              <div class="popup-block">
+                <p id="popup-description">Без описания</p>
+              </div>
               <button class="btn" id="close-btn">OK</button>
             </div>
           </div>
