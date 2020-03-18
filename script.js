@@ -20,13 +20,47 @@ let onv = 0,
     onh = 0,
     left = 0;
 
+//** Scroll **/
+document.addEventListener('scroll', onScroll);
+
+function onScroll(event) {
+  const curentPosition = window.scrollY;
+  const section = document.querySelectorAll('.main>section');
+  const header = document.querySelector('header');
+  const menu = document.querySelectorAll('#menu a');
+
+  // if (header.offsetTop <= curentPosition && (header.offsetTop + header.offsetHeight) > curentPosition) {
+  //   menu.forEach((a) => {
+  //     a.classList.remove('active');
+  //     let href = a.getAttribute('href').substring(1);
+  //     if (header.getAttribute('id') === href){
+  //       a.classList.add('active');
+  //     }
+  //   });      
+  // }
+
+  section.forEach((el) => {
+    if (el.offsetTop <= curentPosition && (el.offsetTop + el.offsetHeight) > curentPosition) {
+      menu.forEach((a) => {
+        a.classList.remove('active');
+        let href = a.getAttribute('href').substring(1);
+        if (el.getAttribute('id') === href){
+          a.classList.add('active');
+        }
+      });      
+    }
+  })
+  
+}
+
+
 /*** Меню HEADER***/
-MENU.addEventListener('click', event => {
-  if (event.target.classList.contains('navigation_btn')) {
-  MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
-  event.target.classList.add('active');
-  }
-})
+// MENU.addEventListener('click', event => {
+//   if (event.target.classList.contains('navigation_btn')) {
+//   MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
+//   event.target.classList.add('active');
+//   }
+// })
 
 /*** SLIDER ***/
 
@@ -78,18 +112,26 @@ PHONE_HORIZONTAL.addEventListener('click', event => {
 
 /*** Рандомно меняет изображения  ***/
 PORTFOLIO_MENU.addEventListener('click', event => {
-  let arr = [];
+  let arr = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+  function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+  }
+  shuffle(arr)
+
+
+  console.log(arr);
   if (event.target.classList.contains('portfolio__button') & !event.target.classList.contains('active')) {
     PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
     PORTFOLIO_MENU.querySelectorAll('button').forEach(el => el.classList.remove('active'));
     event.target.classList.add('active');
+    let n = 0;
     for (let i = 0; i < GALLERY.length; i++) {
       let IMG = GALLERY[i].children;
       for (let j = 0; j < IMG.length; j++) {
-        let n = Math.floor(Math.random() * 12) + 1;
-        IMG[j].setAttribute('src', `./assets/img/portfolio${n}.png`);
-        arr.push(n);
-        console.log(arr)
+        //let n = Math.floor(Math.random() * 12) + 1;
+        IMG[j].setAttribute('src', `./assets/img/portfolio${arr[n]}.png`);
+        n++;
       }
     }
   }

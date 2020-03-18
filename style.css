@@ -46,6 +46,9 @@
     font-style: normal;
   }
   
+  body, html {
+    scroll-behavior: smooth;
+  }
   
   * {
     margin: 0px;
@@ -86,6 +89,9 @@
     box-sizing: border-box; 
     position: sticky;
     top: 0;
+    -webkit-transition: all 1s ease;
+    transition: all ease 1s;
+    z-index: 1;
   }
   
   .header-wrapper {
@@ -164,7 +170,6 @@
 
   .slider-scroll {
     width: 1200px;
-    background: pink;
     position: absolute;
     left: 0;
     transition: all ease 1s;
@@ -178,7 +183,7 @@
 
   
   .slider__left {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 281px;
     left: 42px;
@@ -190,7 +195,7 @@
   }
   
   .slider__right {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 281px;
     left: 964px;
@@ -202,21 +207,21 @@
   }
   
   .slider__vertical {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 53px;
     left: 112px;
   }
   
   .slider__horizontal {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 174px;
     left: 425px;
   }
 
   .home__btn_vertical {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 461px;
     left: 199px;
@@ -224,7 +229,7 @@
   }
 
   .home__btn_horizontal {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 262px;
     left: 433px;
@@ -232,14 +237,14 @@
   }
 
   .slider__screen_phone {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 0px;
     left: 1200px;
   }
 
   .slider__screen_phone2 {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 0px;
     left: -1200px;
@@ -247,7 +252,7 @@
 
   .slider__screen_black {
     visibility: hidden;
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 115px;
     left: 122px;
@@ -255,7 +260,7 @@
 
   .slider__screen_rotate {
     visibility: hidden;
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     top: 112px;
     left: 555px;
