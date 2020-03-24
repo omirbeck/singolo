@@ -1,7 +1,7 @@
 const MENU = document.getElementById('menu');
 const PORTFOLIO_MENU = document.getElementById('portfolio-menu');
 const PORTFOLIO_GAL = document.querySelector('.portfolio__gallery');
-const GALLERY = document.querySelectorAll('#gallery');
+const GALLERY = document.querySelector('#gallery');
 const SUBMIT = document.getElementById('form__submit');
 const MESSAGE = document.getElementById('popup');
 const CLOSE_BTN = document.getElementById('close-btn');
@@ -20,27 +20,39 @@ let onv = 0,
     onh = 0,
     left = 0;
 
-//** Scroll **/
+
+/*** Burger Menu ***/
+
+const burger_btn = document.querySelector('.burger-btn');
+const burger_overlay = document.querySelector('.burger-overlay');
+const burger_menu = document.querySelector('.burger-menu');
+
+function burgerVisible() {
+  burger_btn.classList.toggle('burger-btn_active');
+  burger_menu.classList.toggle('burger_visible');
+  burger_overlay.classList.toggle('burger_visible');
+}
+
+burger_btn.addEventListener('click', event => {
+  burgerVisible();
+})
+
+burger_overlay.addEventListener('click', event => {
+  burgerVisible();
+})
+
+
+/*** Scroll ***/
 document.addEventListener('scroll', onScroll);
 
 function onScroll(event) {
   const curentPosition = window.scrollY;
-  const section = document.querySelectorAll('.main>section');
+  const section = document.querySelectorAll('.main > section');
   const header = document.querySelector('header');
-  const menu = document.querySelectorAll('#menu a');
-
-  // if (header.offsetTop <= curentPosition && (header.offsetTop + header.offsetHeight) > curentPosition) {
-  //   menu.forEach((a) => {
-  //     a.classList.remove('active');
-  //     let href = a.getAttribute('href').substring(1);
-  //     if (header.getAttribute('id') === href){
-  //       a.classList.add('active');
-  //     }
-  //   });      
-  // }
+  const menu = document.querySelectorAll('#menu li a');
 
   section.forEach((el) => {
-    if (el.offsetTop <= curentPosition && (el.offsetTop + el.offsetHeight) > curentPosition) {
+    if (el.offsetTop - header.clientHeight <= curentPosition && (el.offsetTop + el.offsetHeight) > curentPosition) {
       menu.forEach((a) => {
         a.classList.remove('active');
         let href = a.getAttribute('href').substring(1);
@@ -52,15 +64,6 @@ function onScroll(event) {
   })
   
 }
-
-
-/*** Меню HEADER***/
-// MENU.addEventListener('click', event => {
-//   if (event.target.classList.contains('navigation_btn')) {
-//   MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
-//   event.target.classList.add('active');
-//   }
-// })
 
 /*** SLIDER ***/
 
@@ -90,66 +93,41 @@ BTN_RIGHT.addEventListener('click', event => {
 
 /*** PHONE SCREEN BLACK***/
 PHONE_VERTICAL.addEventListener('click', event => {
-  if (onv == 0) {
-    document.querySelector('.slider__screen_black').style.visibility = 'visible';
-    onv = 1;
-  } else if (onv = 1) {
-    document.querySelector('.slider__screen_black').style.visibility = 'hidden';
-    onv = 0;
-  }
+  document.querySelector('.slider__screen_black').classList.toggle('visible');
 })
 
 PHONE_HORIZONTAL.addEventListener('click', event => {
-  if (onh == 0) {
-    document.querySelector('.slider__screen_rotate').style.visibility = 'visible';
-    onh = 1;
-  } else if (onh = 1) {
-    document.querySelector('.slider__screen_rotate').style.visibility = 'hidden';
-    onh = 0;
-  }
+  document.querySelector('.slider__screen_rotate').classList.toggle('visible');
 })
 
 
-/*** Рандомно меняет изображения  ***/
+/*** Рандомно генерирует изображение для блока Portfolio  ***/
 PORTFOLIO_MENU.addEventListener('click', event => {
-  let arr = [1,2,3,4,5,6,7,8,9,10,11,12];
 
-  function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
-  }
-  shuffle(arr)
-
-
-  console.log(arr);
   if (event.target.classList.contains('portfolio__button') & !event.target.classList.contains('active')) {
     PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
     PORTFOLIO_MENU.querySelectorAll('button').forEach(el => el.classList.remove('active'));
     event.target.classList.add('active');
-    let n = 0;
-    for (let i = 0; i < GALLERY.length; i++) {
-      let IMG = GALLERY[i].children;
-      for (let j = 0; j < IMG.length; j++) {
-        //let n = Math.floor(Math.random() * 12) + 1;
-        IMG[j].setAttribute('src', `./assets/img/portfolio${arr[n]}.png`);
-        n++;
-      }
-    }
+
+    GALLERY.querySelectorAll('.gallery__img').forEach(element => {        
+      element.style.order = Math.floor(1 + Math.random() * 12);        
+ });
+
   }
 })
 
 
 PORTFOLIO_GAL.addEventListener('click', event => {
-  console.log(event.target.classList)
   if (event.target.classList[0] == 'gallery__img') {
     PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
     event.target.classList.add('active_border');
   }
 })
 
-/*** POP UP***/
-FORM_NAME = document.getElementById('form-name');
-FORM_EMAIL = document.getElementById('form-email');
-FORM = document.querySelector('.form');
+/*** POP UP ***/
+const FORM_NAME = document.getElementById('form-name');
+const FORM_EMAIL = document.getElementById('form-email');
+const FORM = document.querySelector('.form');
 
 FORM.addEventListener("submit", event => {
   event.preventDefault();
@@ -161,9 +139,6 @@ FORM.addEventListener("submit", event => {
       DESCRIPTION.textContent =  `Описание: ${FORM_DESC.value}`;
     }
     MESSAGE.classList.remove('hidden');
-    FORM_SUBJECT.value = '';
-    FORM_DESC.value = '';
-    
   }
   
 })
@@ -172,5 +147,9 @@ CLOSE_BTN.addEventListener('click', event => {
   TEMA.textContent = 'Без темы';
   DESCRIPTION.textContent = 'Без описания';
   MESSAGE.classList.add('hidden');
+  FORM_SUBJECT.value = '';
+  FORM_DESC.value = '';
+  FORM_NAME.value = '';
+  FORM_EMAIL.value = '';
 })
 

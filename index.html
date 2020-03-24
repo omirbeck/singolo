@@ -11,10 +11,11 @@
 <body>
   <header class="header">
     <div class="wrapper header-wrapper">
+      <img class="burger-btn" src="./assets/img/burger_btn.png" alt="">
       <a href="#" class="logo">
         <h1>SINGOLO<span>*</span></h1>
       </a>
-      <nav class="header__navigation">
+      <nav class="header__navigation burger-menu">
         <ul class="navigation" id="menu">
           <li><a class="navigation_btn active" href="#home">home</a></li>
           <span>&#183;</span>
@@ -27,6 +28,7 @@
           <li><a class="navigation_btn" href="#contact">contact</a></li>
         </ul>
       </nav>
+      <div class="burger-overlay"></div>
     </div>
   </header>
   <main class="main">
@@ -55,7 +57,7 @@
             Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
           </p>
         </div>
-        <div class="layout-3-column">
+        <div class="layout-3-column services__flex">
           <div class="services__content">
             <img class="services__img" width="59" height="59" src="./assets/img/pen.png" alt="services">
             <div class="services__text">
@@ -83,8 +85,6 @@
               </p>
             </div>
           </div>
-        </div>
-        <div class="layout-3-column">
           <div class="services__content ">
             <img class="services__img" width="59" height="59" src="./assets/img/phone.png" alt="services">
             <div class="services__text">
@@ -114,6 +114,7 @@
             </div>
           </div>
         </div>
+        
       </div>
       </div>
     </section>
@@ -136,14 +137,10 @@
             <img class="gallery__img" src="./assets/img/portfolio2.png" alt="portfolio" />
             <img class="gallery__img" src="./assets/img/portfolio3.png" alt="portfolio" />
             <img class="gallery__img" src="./assets/img/portfolio4.png" alt="portfolio" />
-          </div>
-          <div class="layout-4-column" id="gallery">
             <img class="gallery__img" src="./assets/img/portfolio5.png" alt="portfolio" />
             <img class="gallery__img" src="./assets/img/portfolio6.png" alt="portfolio" />
             <img class="gallery__img" src="./assets/img/portfolio7.png" alt="portfolio" />
             <img class="gallery__img" src="./assets/img/portfolio8.png" alt="portfolio" />
-          </div>
-          <div class="layout-4-column" id="gallery">
             <img class="gallery__img" src="./assets/img/portfolio9.png" alt="portfolio" />
             <img class="gallery__img" src="./assets/img/portfolio10.png" alt="portfolio" />
             <img class="gallery__img" src="./assets/img/portfolio11.png" alt="portfolio" />
@@ -163,7 +160,7 @@
             tortor mauris condimentum nibh.
           </p>
         </div>
-        <div class="layout-3-column">
+        <div class="layout-3-column about-us__flex">
           <div class="about-us__content">
             <img src="./assets/img/about-us1.jpg" alt="about-us" />
             <h3>Adam Jensen</h3>
