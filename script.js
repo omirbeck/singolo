@@ -15,10 +15,8 @@ const PHONE_VERTICAL = document.querySelector('.home__btn_vertical'),
 const BTN_LEFT = document.querySelector('.btn_left'),
       BTN_RIGHT = document.querySelector('.btn_right');
 const slider_phone = document.querySelector('.slider__screen_phone');
-let arr = [];
-let onv = 0,
-    onh = 0,
-    left = 0;
+
+let left = 0;
 
 
 /*** Burger Menu ***/

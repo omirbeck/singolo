@@ -430,6 +430,7 @@ a {
 
 .active_border {
   outline: 5px solid #f06c64;
+  transition: all 0.2s;
 }
 
 /******* About Us *******/
@@ -630,8 +631,7 @@ svg {
   position: relative;
   top: 20%;
   width: 60vw;
-  min-height: 15vw;
-  max-height: 45vw;
+  max-height: 100vh;
   border: 2px solid #a1a3a6;
   text-align: center;
   z-index: 1;
@@ -1003,11 +1003,10 @@ svg {
   justify-content: center;
 }
 
-
-
-
+}
 
 @media screen and (max-width: 374px) {
+
   .slider__left {
     top: 25vw;
     left: 4vw;
@@ -1026,4 +1025,4 @@ svg {
     font-size: 10px;
   }
 
-}
+}}
