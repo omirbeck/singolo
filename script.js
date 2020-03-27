@@ -101,15 +101,23 @@ PHONE_HORIZONTAL.addEventListener('click', event => {
 
 /*** Рандомно генерирует изображение для блока Portfolio  ***/
 PORTFOLIO_MENU.addEventListener('click', event => {
+  let arr = [];
+  const gallery = document.querySelector('#gallery');
 
   if (event.target.classList.contains('portfolio__button') & !event.target.classList.contains('active')) {
-    PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
     PORTFOLIO_MENU.querySelectorAll('button').forEach(el => el.classList.remove('active'));
     event.target.classList.add('active');
 
-    GALLERY.querySelectorAll('.gallery__img').forEach(element => {        
-      element.style.order = Math.floor(1 + Math.random() * 12);        
- });
+    gallery.querySelectorAll('.gallery__img').forEach(element => {        
+      arr.push(element);
+      element.remove();     
+    });
+
+    arr.sort(() => Math.random() - 0.5);
+    
+    arr.forEach(element => {
+      gallery.appendChild(element);
+    })
 
   }
 })
@@ -117,8 +125,13 @@ PORTFOLIO_MENU.addEventListener('click', event => {
 
 PORTFOLIO_GAL.addEventListener('click', event => {
   if (event.target.classList[0] == 'gallery__img') {
-    PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
-    event.target.classList.add('active_border');
+    if (event.target.classList[1] == 'active_border') {
+      event.target.classList.toggle('active_border');
+    } else {
+      PORTFOLIO_GAL.querySelectorAll('.gallery__img').forEach(el => el.classList.remove('active_border'));
+      event.target.classList.toggle('active_border');
+    }
+   
   }
 })
 
