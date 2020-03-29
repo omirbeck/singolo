@@ -620,7 +620,7 @@ svg {
   top: 0;
   left: 0;
   background: #0008;
-  z-index: 1;
+  z-index: 9;
   overflow: auto;
 }
 
@@ -972,6 +972,14 @@ svg {
     border-bottom: 0px;
   }
 
+  .slider__right {
+    left: 93vw;
+  }
+
+  .slider__left {
+    left: 4vw;
+  }
+
   .services-wrapper {
     padding: 25px 30px 0px 30px; 
     border-bottom: 0;
@@ -1070,6 +1078,7 @@ svg {
   }
 
 }
+
 
 @media screen and (max-width: 374px) {
 

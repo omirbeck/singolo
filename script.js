@@ -39,6 +39,14 @@ burger_overlay.addEventListener('click', event => {
   burgerVisible();
 })
 
+burger_menu.addEventListener('click', (event) => {
+  if (window.innerWidth < 768) {
+    if (event.target.classList.contains('navigation_btn')) {
+      burgerVisible();   
+    }
+  }  
+})
+
 
 /*** Scroll ***/
 document.addEventListener('scroll', onScroll);
